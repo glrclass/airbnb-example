@@ -1,6 +1,6 @@
 -- What is the number of reviews and date of the latest review, by property type?
 
-SELECT listings.neighborhood, COUNT(reviews.id)
+SELECT listings.property_type, COUNT(reviews.listing_id), MAX(reviews.date_reviewed)
 FROM listings
 INNER JOIN reviews ON reviews.listing_id = listings.id
 GROUP BY property_type;
